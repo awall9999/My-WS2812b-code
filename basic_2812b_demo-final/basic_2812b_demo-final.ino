@@ -1,6 +1,13 @@
-#define HALT            asm("nop\n")
-#define BITHIGH         asm ("sbi %0, %1 \n": : "I" (_SFR_IO_ADDR(PORTB)), "I" (PORTB4) );
-#define BITLOW          asm ("cbi %0, %1 \n": : "I" (_SFR_IO_ADDR(PORTB)), "I" (PORTB4) );
+/*
+ * MY WS2812b Control Code
+ * This code is for 16Mhz Arduinos. 
+ * (C) Alain MAUER
+ * www.alainsprojects.com
+ */
+
+#define HALT            asm("nop\n") // Do nothing, just waste 16,5ns
+#define BITHIGH         asm ("sbi %0, %1 \n": : "I" (_SFR_IO_ADDR(PORTB)), "I" (PORTB4) ); //Assembler code to Set Port D12 (B4) to 1. This is the Data in Pin of your LED
+#define BITLOW          asm ("cbi %0, %1 \n": : "I" (_SFR_IO_ADDR(PORTB)), "I" (PORTB4) ); //Assembler code to Set Port D12 (B4) to 0  This is the Data in Pin of your LED
 
 int LN = 20; // Numbers of LEDs used
 int LB=155; //Brightness LED
