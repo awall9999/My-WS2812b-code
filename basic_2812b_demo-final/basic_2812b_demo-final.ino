@@ -109,7 +109,7 @@ void setup() {
 void loop() {
   // change color from 0 (off) to 7 (white) of led 10 each second
   for (int i = 0; i <= 7; i++) {
-                                LEDPos[9]=i; // Led nr 10 goes on color 0 to 7
+                                LEDPos[7]=i; // Led nr 8 goes on color 0 to 7
                                 UpdateLEDs(); // Execute the settings
                                 delay(1000); // wait a second
                                }
