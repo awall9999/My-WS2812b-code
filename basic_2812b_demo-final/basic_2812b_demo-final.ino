@@ -92,6 +92,8 @@ void UpdateLEDs() {
 
 
 void setup() {
+  
+  DDRB = DDRB | B00010000; // Set PortB4 as Output. Ignores all the other Pins of PortB
   Resetall(); // All LEDs off
 
   // LEDPos [positon of what LED you want to set] = Color of this LED (0=off 1=red 2=green ...... defined in the void LEDCall. Feel free to add or change the colors)
@@ -101,7 +103,7 @@ void setup() {
   LEDPos[2]=3; //Led nr Three goes on Blue
   LEDPos[4]=3; //Led nr four goes on White
   UpdateLEDs(); // Execute the settings
-
+  
 }
 
 void loop() {
